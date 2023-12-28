@@ -1,0 +1,24 @@
+#Defining  the query to evaluate
+text='SELECT *     FROM (SELECT * FROM (SELECT * FROM emp ) AS new LEFT JOIN (SELECT * FROM (SELECT * FROM suppliers LEFT JOIN new67 LEFT JOIN new) )'
+
+#Splitting the text to get all the words contained in the query in a list
+query =text.split()
+query=list(query)
+#enable the line 1  below to see the output of the query variable
+#1.- print(query)
+
+#Create an empty list where we are going to store the tables
+index=[]
+
+#iterate through the array  and find the key words base on the position to identify if it is a table or not
+for i,e in enumerate(query):
+#    print(i)
+#   print(e)
+    if query[i-1]=="FROM" and query[i] != "(SELECT" or  query[i-1]=="JOIN" and query[i] != "(SELECT" :
+        index.append(query[i])
+        
+#Convert the final list to a string to be able to apply str methods 
+print(index)       
+index=str(index)
+#remove undesired parenthesis from our list of tables 
+print(index.replace(")",""))
