@@ -24,7 +24,7 @@ sensors_df = pd.read_csv(StringIO(sensors_data))
 devices_df = pd.read_csv(StringIO(devices_data))
 
 def extract_device_name(text):
-    # Regex to match MCAIN-{Whatever}-{Whatever} pattern not surrounded by []
+    # Regex to match Company-{Whatever}-{Whatever} pattern not surrounded by []
     matches = re.findall(r'\bDesiredPattern-[A-Z0-9]+-[A-Z0-9]+\b', text)
     # Filter out matches that are inside square brackets
     return [match for match in matches if not re.search(r'\[.*?\b' + re.escape(match) + r'\b.*?\]', text)]
@@ -43,4 +43,5 @@ Reach_list = [ip.strip() for ip in reach_str.split(',')]
 print(Reach_list)
 print(reach_str)
 Runique=list(set(Reach_list))
+
 print(len(Runique))
