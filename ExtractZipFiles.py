@@ -52,7 +52,7 @@ import shutil
 
 # Define paths
 downloads_folder = os.path.expanduser("~/Downloads")
-destination_folder = 'C:\\Users\\OSCISNER\\DNAScripts'  # Change this to your desired destination
+destination_folder = 'C:\\Users\\{Username}\\{Directory}'  # Change this to your desired destination
 
 # Ensure the destination folder exists
 os.makedirs(destination_folder, exist_ok=True)
@@ -89,4 +89,5 @@ for zip_file_name in zip_files:
         shutil.move(extracted_folder_path, os.path.join(destination_folder, extracted_folder_name))
         print(f"ZIP file '{zip_file_name}' has been extracted (top-level files only) to '{extracted_folder_name}' and moved successfully.")
     else:
+
         print(f"Error: The file '{zip_file_name}' does not exist or is not a valid ZIP file.")
