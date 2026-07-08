@@ -18,6 +18,7 @@ for i,e in enumerate(query):
         index.append(query[i])
         
 #Convert the final list to a string to be able to apply str methods 
+print("Final List of Tables")
 print(index)       
 index=str(index)
 #remove undesired parenthesis from our list of tables 
