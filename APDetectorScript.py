@@ -125,7 +125,7 @@ if __name__ == "__main__":
         df = pd.DataFrame(ap_data, columns=['Device IP', 'AP Name','AP Model','AP IP'])
         print('Execution completed.')
 
-
+print("Final DataFrame of Access Points:")
 df['Model']=df['AP Model'].str.split().str[0]
 APInfo=df[['AP Name','Model','AP IP','Device IP']]
 APInfo = APInfo[~APInfo['Model'].isna()]
