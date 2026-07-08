@@ -3,6 +3,7 @@
 import os
 import zipfile
 import shutil
+import pandas as pd
 
 # Define paths
 downloads_folder = os.path.expanduser("~/Downloads")
