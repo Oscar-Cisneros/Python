@@ -135,5 +135,4 @@ ainfo16=WLCs.merge(ainfo16,how='left',left_on='managementIpAddress',right_on='De
 APSInformation=ainfo16[['hostname','managementIpAddress','AP Name','Model','AP IP']]
 APSInformation.fillna('No Access Points to Show')
 APSInformation.drop_duplicates(subset=['managementIpAddress','AP IP'],inplace=True)
-print("Last Information of Access Points")
 APSInformation
